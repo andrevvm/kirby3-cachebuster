@@ -12,7 +12,7 @@ Kirby::plugin('schnti/cachebuster', [
 			if ($kirby->option('schnti.cachebuster.active')) {
 
 				$file = $kirby->roots()->index() . DS . $url;
-				return dirname($url) . '/' . F::name($url) . '.' . F::modified($file) . '.css';
+				return dirname($url) . '/' . F::name($url) . '.css?v=' . F::modified($file);
 
 			} else {
 				return $url;
@@ -23,7 +23,7 @@ Kirby::plugin('schnti/cachebuster', [
 			if ($kirby->option('schnti.cachebuster.active')) {
 
 				$file = $kirby->roots()->index() . DS . $url;
-				return dirname($url) . '/' . F::name($url) . '.' . F::modified($file) . '.js';
+				return dirname($url) . '/' . F::name($url) . '.js?v=' . F::modified($file);
 
 			} else {
 				return $url;
